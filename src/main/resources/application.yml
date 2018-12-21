@@ -1,0 +1,35 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: easy
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:                           # 指定数据源
+            driver-class-name: com.mysql.jdbc.Driver
+            url: jdbc:mysql://116.62.68.35:3306/test?useUnicode=true&amp;characterEncoding=UTF8
+            username: root
+            password: root
+            type: com.alibaba.druid.pool.DruidDataSource
+            filters: stat
+            maxActive: 20
+            initialSize: 1
+            maxWait: 60000
+            minIdle: 5
+            timeBetweenEvictionRunsMillis: 60000
+            minEvictableIdleTimeMillis: 300000
+            validationQuery: SELECT 1 FROM DUAL
+            testWhileIdle: true
+            testOnBorrow: false
+            testOnReturn: false
+            poolPreparedStatements: true
+            maxOpenPreparedStatements: 20
+
+logging:                                # 配置日志级别，让hibernate打印出执行的SQL
+  config: classpath:logback.xml
+  path: /opt/logs/
+  level:
+    root: info
