@@ -27,19 +27,9 @@ spring:
             testOnReturn: false
             poolPreparedStatements: true
             maxOpenPreparedStatements: 20
-  messages:
-    basename: i18n/Messages,i18n/Pages
-  jms:
-    pub-sub-domain: false   # 配置消息的类型，如果是true则表示为topic消息，如果为false表示Queue消息
-  activemq:
-    user: admin    # 连接用户名
-    password: admin   # 连接密码
-    broker-url: tcp://127.0.0.1:61616 # 消息组件的连接主机信息
-    pool:
-      enabled: false
 
 logging:                                # 配置日志级别，让hibernate打印出执行的SQL
   config: classpath:logback.xml
-  path: /Users/xf/logs/
+  path: /Users/xf/logs
   level:
     root: info
