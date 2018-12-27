@@ -2,7 +2,7 @@
 /target/ 
 /.idea/ 
 /LOG*/
-
+/*.log
 .classpath
 .project
 .settings
